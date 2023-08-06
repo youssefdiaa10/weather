@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/cloud.png" type="image/x-icon">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <title>WEATHER</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light w-100 ">
+         <div class="container">
+          <div class="ms-5 mt-5 w-25 d-flex justify-content-center">
+              <img src="images/cloud.png" class="img-fluid logo-img" alt="">
+              <div class="">
+               <a class="weather-logo navbar-brand text-light text-center" href="index.html">Weather</a>
+              </div>
+           </div>
+
+             <i class="fa-solid fa-bars navbar-toggler mt-5 me-4" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></i>
+
+           <div class="collapse navbar-collapse w-75 mt-5" id="navbarSupportedContent">
+             <ul class="navbar-nav m-auto">
+               <li class="nav-item active">
+                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">News</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">Live Cameras</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="#">Photos</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="content.html">Content</a>
+                 </li>
+             </ul>
+           </div>
+         </div>
+      </nav>
+
+
+      <div class="position-relative py-5 ">
+        <div class="bgImage">
+          <div class="container">
+            <div class="position-relative my-4 w-100">
+              <input type="email" onkeydown="searchWeather()" class="w-100 rounded-5 py-4 home-head-input" placeholder="Find your Location..." id="city">
+              <button type="button" onclick="searchWeather()" class="btn btn-primary rounded-5 py-3 px-5 position-absolute home-head-btn">Find</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="position-absolute display-weather z-3 w-100">
+          <div class="container w-100">
+            <div class="row gx-0">
+               <div class="col-sm-12 col-lg-4">
+                  <div class="d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center display-weather-l-head display-weather-l-and-r-head-bg">
+                           <p class="text-light mt-3 ms-3" id="currentDay"></p>
+
+                           <div class="mt-3 me-3 d-flex">
+                            <p class="text-light me-2" id="currentDayOfMonth"></p>
+                            <p class="text-light" id="currentMonth"></p>
+                           </div>
+                        </div>
+
+                        <div class="display-weather-l-body display-weather-l-and-r-body-bg correct-mistake1">
+                          <p class="text-light my-2 ms-4" id="cityName">City Name</p>
+
+                         <div class="d-flex justify-content-between align-items-center mx-4 display-weather-left-inner">
+                           <h2 class="text-light mt-2 weather-degree" id="weatherDegree">40.3°C</h2>
+                            <img src="images/sunny.webp" class="weather-img" id="conditionImage1">
+                         </div>
+
+                         <p class="text-primary mt-2 ms-4 fw-lighter" id="weatherCondition1">Sunny</p>
+
+                         <div class="d-flex justify-content-start ms-2">
+                            <div class="display-weather-body-icon">
+                              <i class="fa-solid fa-umbrella text-light"></i>
+                              <p class="text-light">20%</p>
+                            </div>
+
+                            <div class="display-weather-body-icon">
+                              <i class="fa-solid fa-wind text-light"></i>
+                              <p class="text-light">18km/h</p>
+                            </div>
+
+                            <div class="display-weather-body-icon">
+                              <i class="fa-solid fa-compass text-light"></i>
+                              <p class="text-light">East</p>
+                            </div>
+                         </div>
+                        </div>
+                  </div>
+               </div>
+
+               <div class="col-sm-12 col-lg-4">
+                <div class="display-weather-md-and-r">
+                      <div class="d-flex justify-content-between align-items-center display-weather-md-head-bg">
+                         <p class="text-light mt-3 mx-auto" id="nextDay"></p>
+                      </div>
+
+                      <div class="display-weather-md-bg">
+                       <div class="d-flex flex-column justify-content-center align-items-center display-weather-md-body-bg correct-mistake2">
+                          <img src="images/sunny.webp" class="me-2" id="conditionImage2">
+                          <h2 class="text-light mt-4 ms-2 " id="nextWeatherHigh">40°C</h2>
+                          <p class="text-light mb-4" id="nextWeatherLow">25°C</p>
+                          <p class="text-primary mt-2" id="weatherCondition2">Sunny</p>
+                       </div>
+                      </div>
+                </div>
+               </div>
+
+               <div class="col-sm-12 col-lg-4 ">
+                <div class="display-weather-md-and-r">
+                      <div class="d-flex justify-content-between align-items-center display-weather-r-head display-weather-l-and-r-head-bg">
+                         <p class="text-light mt-3 mx-auto" id="afterNextDay"></p>
+                      </div>
+
+                      <div class="display-weather-r-body display-weather-md-bg">
+                        <div class="d-flex flex-column justify-content-center align-items-center display-weather-l-and-r-body-bg correct-mistake2">
+                          <img src="images/sunny.webp" class="me-2" id="conditionImage3">
+                          <h2 class="text-light mt-4 ms-2 " id="afterNextWeatherHigh">46°C</h2>
+                          <p class="text-light mb-4" id="afterNextWeatherLow">28°C</p>
+                          <p class="text-primary mt-2 " id="weatherCondition3">Sunny</p>
+                        </div>
+                      </div>
+                </div>
+               </div>
+            </div>
+           </div>
+        </div>
+      </div>
+
+      <div class="py-2" style="background-color: #262936;">
+      </div>
+
+
+
+      <footer class="position-relative z-3 my-footer">
+         <div class="container position-absolute my-inner-footer">
+             <div class="d-flex justify-content-center align-items-center flex-column">
+                <div class="d-flex justify-content-around align-items-center copy-right-container">
+                  <div class="position-relative my-4 w-100 me-3">
+                    <input type="email" name="email" class="w-100 rounded-5 py-4 home-footer-input" placeholder="Enter your email to subscribe..." >
+                    <button type="button" class="btn btn-primary rounded-5 p-3 position-absolute home-footer-btn">Subscribe</button>
+                  </div>
+
+                  <div class="d-flex">
+                    <div class="icon-brand-home"><a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a></div>
+                    <div class="icon-brand-home"><a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a></div>
+                    <div class="icon-brand-home"><a href="https://www.google.com"><i class="fa-brands fa-google-plus-g"></i></a></div>
+                    <div class="icon-brand-home"><a href="https://www.pinterest.com"><i class="fa-brands fa-pinterest"></i></a></div>
+                  </div>
+                </div>
+                <p class="copy-right">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+             </div>
+         </div>
+      </footer>
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

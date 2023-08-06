@@ -1,0 +1,97 @@
+@media screen and (max-width: 1024px){
+
+.content-md{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.display-weather-l-head{
+    border-top-right-radius: 10px;
+}
+.display-weather-l-body{
+    border-bottom-left-radius: 0px;
+}
+.display-weather-r-head{
+    border-top-right-radius: 0px;
+}
+
+
+
+.form-container{
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+    .copy-right-container{
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: flex-start;
+         width: 100%;
+         padding-left: 10px;
+         padding-right: 100px;
+    }
+    .home-footer-input{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 100px;
+    }
+    .home-footer-btn{
+        left: 80%;
+    }
+
+    .home-head-input{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 100px;
+    }
+    .home-head-btn{
+        left: 80%;
+    }
+
+    .my-footer{
+        margin-top: 760px;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width:1400px){
+    .home-footer-btn{
+        left: 79%;
+    }
+    .home-head-btn{
+        left: 87%;
+    }
+
+    .display-weather{
+        top: 40%;
+    }
+}
+
+@media screen and (min-width: 528px) and (max-width:800px){
+    .home-footer-btn{
+        left: 70%;
+    }
+    .home-head-btn{
+        left: 73%;
+    }
+}
+
+@media screen  and (min-width: 400px) and (max-width: 527px){
+    .home-footer-btn{
+        left: 66%;
+    }
+    .home-head-btn{
+        left: 69%;
+    }
+
+    .my-footer{
+        margin-top: 690px;
+        padding: 120px 0px;
+    }
+}
+
+
+
