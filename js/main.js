@@ -101,7 +101,7 @@ getNextDay();
 getAfterNextDay();
 
 
-async function getCity(city){
+async function getCity(city="cairo"){
     var requestCity = await fetch(`http://api.weatherapi.com/v1/search.json?key=f4a59f1758194aa9b75204153230208&q=${city}`);
     requestCity = await requestCity.json();
 
